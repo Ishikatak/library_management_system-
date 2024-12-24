@@ -1,0 +1,21 @@
+<div class="article-row" style="display: flex; align-items: center; margin-bottom: 20px;">
+	<!-- Article Image (Left Side) -->
+	<div class="article-image" style="flex: 0 0 100px; margin-right: 20px;">
+	  <img src="{{ doc.image }}" alt="{{ doc.name }}" style="width: 100%; height: auto;" />
+	</div>
+  
+	<!-- Article Details (Right Side) -->
+	<div class="article-details">
+	  <!-- Article Title Link -->
+	  <a href="/{{ doc.route |e }}" class="article-title" style="font-size: 18px; font-weight: bold; color: #333;">
+		{{ (doc.title or doc.name) |e }}
+	  </a>
+  
+	  <!-- Article Author -->
+	  <p style="font-size: 14px; color: #777;">By {{ doc.author }}</p>
+      {{doc.isbn}}
+
+	</div>
+  </div>
+  
+  

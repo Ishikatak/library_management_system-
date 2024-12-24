@@ -1,0 +1,34 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+  <!-- Title of the page -->
+  <h1>{{ title |e }}</h1>
+
+  <!-- Image of the item (e.g., book cover or article image) -->
+  <div class="article-image" style="flex: 0 0 100px; margin-right: 20px;">
+    <img src="{{ doc.image }}" alt="{{ doc.name }}" style="width: 150px; height: auto;" />
+  </div>
+
+  <!-- Item title displayed in a larger heading -->
+  <h2>{{ title }}</h2>
+
+  <!-- Author information -->
+  <p>By {{ author }}</p>
+
+  <!-- Status of the item (Available or Issued) -->
+  <p>
+    {%- if status == 'Available' -%}
+      <span class="status available">Available</span>
+    {%- elif status == 'Issued' -%}
+      <span class="status issued">Issued</span>
+    {%- endif -%}
+  </p>
+
+  <!-- Publisher and ISBN information -->
+  <p>Publisher: <strong>{{ publisher }}</strong></p>
+  <p>ISBN: <strong>{{ isbn }}</strong></p>
+
+  <!-- Description of the item -->
+  <p>{{ description }}</p>
+  
+{% endblock %}
